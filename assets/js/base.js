@@ -18,7 +18,7 @@ $.ajaxPrefilter(function (options) {
     // 全局统一挂载 complete 回调函数
     // 不论获取用户信息成功还是失败，最终都会调用 complete 回调函数,目的都是为了控制用户的访问权限，必须有token才能让客户端调用有权限的页面
     options.complete = function (res) {
-        console.log(res)
+        // console.log(res)
         // 在 complete 回调函数中，可以使用 res.responseJSON 拿到服务器响应回来的数据
         if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
             // 1、强制清空 token
